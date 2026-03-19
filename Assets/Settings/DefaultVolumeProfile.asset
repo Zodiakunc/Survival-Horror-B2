@@ -870,7 +870,7 @@ MonoBehaviour:
     m_Value: 50
   enableGround:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   groundHeight:
     m_OverrideState: 1
     m_Value: 0
@@ -900,7 +900,7 @@ MonoBehaviour:
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   enableAdditionalLightsContribution:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   maxSteps:
     m_OverrideState: 1
     m_Value: 128
@@ -909,7 +909,7 @@ MonoBehaviour:
     m_Value: 2
   enabled:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   renderPassEvent:
     m_OverrideState: 1
     m_Value: 550
