@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
 
     [Header("Time")]
     public DayNightCycle dayNightCycle; // Reference your day-night manager
+    public Transform cameraPivot;
 
     private float xRotation = 0f;
 
@@ -44,7 +45,10 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            // Third-person: rotate player only
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -40f, 80f);
+            
+            cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
         }
     }
