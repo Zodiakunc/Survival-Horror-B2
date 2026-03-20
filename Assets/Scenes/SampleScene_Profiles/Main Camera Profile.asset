@@ -18,13 +18,13 @@ MonoBehaviour:
     value: 1
   UsesFixedResolution:
     overrideState: 1
-    value: 1
+    value: 0
   PixelScale:
     overrideState: 1
-    value: 500
+    value: 0
   FixedVerticalResolution:
     overrideState: 1
-    value: 0
+    value: 421
   ColorDepth:
     overrideState: 1
     value: 0.15
@@ -41,6 +41,40 @@ MonoBehaviour:
   DitherIntensity:
     overrideState: 1
     value: 0.15
+--- !u!114 &-1979476377160358598
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: Unity.Postprocessing.Runtime::UnityEngine.Rendering.PostProcessing.LensDistortion
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 0
+    value: -0.9
+  intensityX:
+    overrideState: 0
+    value: 1
+  intensityY:
+    overrideState: 0
+    value: 1
+  centerX:
+    overrideState: 0
+    value: 0
+  centerY:
+    overrideState: 0
+    value: 0
+  scale:
+    overrideState: 0
+    value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +93,7 @@ MonoBehaviour:
   - {fileID: 6807291916852955851}
   - {fileID: 3997534452872737933}
   - {fileID: 7704643295064676496}
+  - {fileID: -1979476377160358598}
 --- !u!114 &1342838069411089999
 MonoBehaviour:
   m_ObjectHideFlags: 3
