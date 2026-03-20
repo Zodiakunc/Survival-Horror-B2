@@ -4,7 +4,9 @@
   <Project Path="PPv2URPConverters.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.Editor.Tests.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.Runtime.csproj" />
+  <Project Path="Unity.Postprocessing.Editor.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.2D.Editor.Overrides.csproj" />
+  <Project Path="Unity.Postprocessing.Runtime.csproj" />
   <Project Path="com.cqf.urpvolumetricfog.editor.csproj" />
   <Project Path="com.cqf.urpvolumetricfog.runtime.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
@@ -12,4 +14,6 @@
   <Project Path="Unity.RenderPipelines.Universal.Runtime.Tests.csproj" />
   <Project Path="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.Shaders.csproj" />
+  <Project Path="Unity.Postprocessing.Runtime.Tests.csproj" />
+  <Project Path="Unity.Postprocessing.Editor.Tests.csproj" />
 </Solution>
