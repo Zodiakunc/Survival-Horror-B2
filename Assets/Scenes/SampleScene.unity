@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayNightCycle
   dayDuration: 120
-  currentTime: 6.41
+  currentTime: 0
   sun: {fileID: 410087040}
 --- !u!4 &234955147
 Transform:
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   firstPersonCam: {fileID: 1578362330}
   thirdPersonCam: {fileID: 1232056729}
-  mouseSensitivity: 100
+  mouseSensitivity: 400
   playerBody: {fileID: 1290591522}
   cameraPivot: {fileID: 782418821}
 --- !u!1 &1543392459
