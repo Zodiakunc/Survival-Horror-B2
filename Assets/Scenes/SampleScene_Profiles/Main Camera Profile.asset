@@ -18,13 +18,13 @@ MonoBehaviour:
     value: 1
   UsesFixedResolution:
     overrideState: 1
-    value: 0
+    value: 1
   PixelScale:
     overrideState: 1
     value: 0
   FixedVerticalResolution:
     overrideState: 1
-    value: 421
+    value: 590
   ColorDepth:
     overrideState: 1
     value: 0.15
@@ -58,22 +58,22 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   intensity:
-    overrideState: 0
+    overrideState: 1
     value: -0.9
   intensityX:
-    overrideState: 0
+    overrideState: 1
     value: 1
   intensityY:
-    overrideState: 0
+    overrideState: 1
     value: 1
   centerX:
-    overrideState: 0
+    overrideState: 1
     value: 0
   centerY:
-    overrideState: 0
+    overrideState: 1
     value: 0
   scale:
-    overrideState: 0
+    overrideState: 1
     value: 1
 --- !u!114 &11400000
 MonoBehaviour:
