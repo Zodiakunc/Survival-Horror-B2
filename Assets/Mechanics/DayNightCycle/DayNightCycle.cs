@@ -1,65 +1,181 @@
 using UnityEngine;
 
+using Unity.Cinemachine;
+ 
 public class DayNightCycle : MonoBehaviour
+
 {
-   [Header("Time")]
-   [Tooltip("How long a full 24-hour cycle lasts in real seconds")]
-   [SerializeField] private float dayDuration = 120f;
 
-   [Tooltip("Current time of day (0 - 24)")]
-   [Range(0f, 24f)]
-   [SerializeField] private float currentTime = 12f;
+    [Header("Time")]
 
-   [Header("Lighting")]
-   [SerializeField] private Light sun;
+    [Tooltip("How long a full 24-hour cycle lasts in real seconds.")]
 
-   private float timeMultiplier;
+    [SerializeField] private float dayDuration = 120f;
+ 
+    [Tooltip("Current time of day (0 - 24)")]
 
-   private void Awake()
-   {
-        if (sun == null)
-        {
+    [Range(0f, 24f)]
+
+    [SerializeField] private float currentTime = 12f;
+ 
+    [Header("Day/Night Settings")]
+
+    [SerializeField] private float dayStartTime = 6f;
+
+    [SerializeField] private float nightStartTime = 18f;
+ 
+    [Header("Lighting")]
+
+    [SerializeField] private Light sun;
+ 
+    [Header("Cameras")]
+
+    [SerializeField] private CinemachineCamera firstPersonCam;
+
+    [SerializeField] private CinemachineCamera thirdPersonCam;
+ 
+    private float timeMultiplier;
+
+    private bool isCurrentlyNight;
+ 
+    // Unity Methods
+
+          private void Awake()
+
+           {
+
+          if (sun == null)
+
             Debug.LogWarning("No sun assigned.");
+ 
+           if (firstPersonCam == null || thirdPersonCam == null)
+
+            Debug.LogWarning("Cameras not assigned.");
+
+           }
+ 
+           private void Start()
+
+            {
+
+                timeMultiplier = 24f / dayDuration;
+ 
+               // Set initial camera state
+
+               isCurrentlyNight = IsNight();
+
+                ApplyCameraState();
+
+           }
+ 
+          private void Update()
+
+          {
+
+                AdvanceTime();
+
+               UpdateSun();
+
+                UpdateCamera();
+
+           }
+ 
+          // Time Logic
+
+          private void AdvanceTime()
+
+           {
+
+                currentTime += timeMultiplier * Time.deltaTime;
+
+                currentTime %= 24f;
+
+           }
+ 
+           public bool IsNight()
+
+            {
+
+               return currentTime >= nightStartTime || currentTime < dayStartTime;
+
+            }
+ 
+          public float GetCurrentTime()
+
+          {
+
+               return currentTime;
+
+           }
+ 
+          // Sun Logic
+
+          private void UpdateSun()
+
+          {
+
+               if (sun == null) return;
+ 
+               float sunAngle = (currentTime / 24f) * 360f;
+
+               sun.transform.rotation = Quaternion.Euler(sunAngle - 90f, 170f, 0f);
+ 
+               float dot = Vector3.Dot(sun.transform.forward, Vector3.down);
+
+               sun.intensity = Mathf.Clamp01(dot);
+
+           }
+ 
+          // Camera Logic
+
+          private void UpdateCamera()
+
+          {
+
+               bool night = IsNight();
+ 
+               if (night != isCurrentlyNight)
+
+                {
+
+                     isCurrentlyNight = night;
+
+                    ApplyCameraState();
+
+                }
+
+          }
+ 
+    private void ApplyCameraState()
+
+    {
+
+        if (isCurrentlyNight)
+
+        {
+
+            // Night → First Person
+
+            firstPersonCam.Priority = 10;
+
+            thirdPersonCam.Priority = 20;
+
         }
-   }
 
-   private void Start()
-   {
-        timeMultiplier = 24f / dayDuration;
-   }
+        else
 
-   private void Update()
-   {
-        AdvanceTime();
-        UpdateSun();
-   }
+        {
 
-   private void AdvanceTime()
-   {
-        currentTime += timeMultiplier * Time.deltaTime;
+            // Day → Third Person
 
-        currentTime %= 24f;
-   }
+            firstPersonCam.Priority = 20;
 
-   public bool IsNight()
-   {
-        return currentTime >=18f || currentTime < 6f;
-   }
+            thirdPersonCam.Priority = 10
+            ;
 
-   public float GetCurrentTime()
-   {
-        return currentTime;
-   }
+        }
 
-   private void UpdateSun()
-   {
-        if (sun == null) return;
+    }
 
-        float sunAngle = (currentTime / 24f) * 360f;
-
-        sun.transform.rotation = Quaternion.Euler(sunAngle - 90f, 170f, 0f);
-
-        float dot = Vector3.Dot(sun.transform.forward, Vector3.down);
-        sun.intensity = Mathf.Clamp01(dot);
-   }
 }
+ 
