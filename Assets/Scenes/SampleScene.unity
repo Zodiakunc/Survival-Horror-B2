@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.84
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayNightCycle
   dayDuration: 120
-  currentTime: 16.1
+  currentTime: 12.64
   dayStartTime: 6
   nightStartTime: 18
   sun: {fileID: 410087040}
@@ -502,15 +502,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 80115d9fa0cef474491506a164cfa14e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.63
+      value: -1.567
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 80115d9fa0cef474491506a164cfa14e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.03
+      value: 10.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 80115d9fa0cef474491506a164cfa14e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.64
+      value: 19.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 80115d9fa0cef474491506a164cfa14e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -742,7 +742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35006189dcdda7c47a5b8759d582ec09, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.28
+      value: 8.14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35006189dcdda7c47a5b8759d582ec09, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1388,6 +1388,7 @@ GameObject:
   - component: {fileID: 1833722276}
   - component: {fileID: 1833722275}
   - component: {fileID: 1833722274}
+  - component: {fileID: 1833722277}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -1549,7 +1550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d54399b04b4fa48a73e121d4937dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePanTilt
-  ReferenceFrame: 1
+  ReferenceFrame: 2
   RecenterTarget: 0
   PanAxis:
     Value: 0
@@ -1585,9 +1586,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineOrbitalFollow
   TargetOffset: {x: 0.75, y: 1.5, z: 0}
   TrackerSettings:
-    BindingMode: 4
+    BindingMode: 3
     PositionDamping: {x: 1, y: 1, z: 1}
-    AngularDampingMode: 0
+    AngularDampingMode: 1
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   OrbitStyle: 0
@@ -1603,7 +1604,7 @@ MonoBehaviour:
       Radius: 2.5
       Height: 0.1
     SplineCurvature: 0.5
-  RecenteringTarget: 2
+  RecenteringTarget: 3
   HorizontalAxis:
     Value: 0
     Center: 0
@@ -1634,6 +1635,24 @@ MonoBehaviour:
       Wait: 1
       Time: 2
     Restrictions: 0
+--- !u!1183024399 &1833722277
+LookAtConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833722267}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_Roll: 0
+  m_WorldUpObject: {fileID: 1290591522}
+  m_UseUpObject: 1
+  m_Active: 1
+  m_IsLocked: 0
+  m_Sources: []
 --- !u!1 &1920669270
 GameObject:
   m_ObjectHideFlags: 0
