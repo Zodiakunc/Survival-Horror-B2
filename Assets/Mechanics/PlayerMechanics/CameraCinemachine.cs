@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     public Transform playerBody;
     public Transform cameraPivot;
 
-    private float xRotation = 0f;
+    
 
     void Start()
     {
@@ -34,14 +34,8 @@ public class CameraController : MonoBehaviour
         // Always rotate player left/right
         playerBody.Rotate(Vector3.up * mouseX);
 
-        // Only handle vertical rotation for first-person
-        if (firstPersonCam.Priority > thirdPersonCam.Priority)
-        {
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-            cameraPivot.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        }
+        
+        
     }
 
     void HandleCameraSwitch()
